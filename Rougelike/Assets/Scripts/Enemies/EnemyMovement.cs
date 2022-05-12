@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     public float Speed;
     public Transform target;
     public float minDistance = 2f;
+    
 
     void Awake()
     {
