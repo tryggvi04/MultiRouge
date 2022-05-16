@@ -8,7 +8,13 @@ public class EnemyMovement : MonoBehaviour
     public float Speed;
     public Transform target;
     public float minDistance = 2f;
+    public Vector3 dir;
+    public Vector2 directDir;
     
+  
+    
+   
+
 
     void Awake()
     {
@@ -19,7 +25,10 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 dir = (target.transform.position - rb2D.transform.position).normalized;
+        dir = (target.transform.position - rb2D.transform.position).normalized;
+       
+        
+     
         if (Vector3.Distance(rb2D.position, target.transform.position) > minDistance)
         {
             rb2D.MovePosition(rb2D.transform.position + dir * Speed * Time.fixedDeltaTime);

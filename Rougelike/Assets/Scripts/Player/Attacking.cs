@@ -5,7 +5,7 @@ using UnityEngine;
 public class Attacking : MonoBehaviour
 {
     public float AttackRange;
-    public GameObject test;
+    public GameObject attackPoint;
     public float AttackPointRange;
     Movement Movement;
     public int Damage;
@@ -19,7 +19,7 @@ public class Attacking : MonoBehaviour
     private void Update()
     {
         MeeleAttack();
-        test.transform.localPosition = Movement.direction.normalized * AttackPointRange;
+        attackPoint.transform.localPosition = Movement.direction.normalized * AttackPointRange;
     }
 
 
@@ -29,7 +29,7 @@ public class Attacking : MonoBehaviour
         {
             if (Input.GetButton("Attack"))
             {
-                RaycastHit2D hit = Physics2D.Raycast(test.transform.position, Movement.direction, AttackRange);
+                RaycastHit2D hit = Physics2D.Raycast(attackPoint.transform.position, Movement.direction, AttackRange);
 
                 if (hit.collider != null && hit.collider.gameObject.CompareTag("Enemy"))
                 {

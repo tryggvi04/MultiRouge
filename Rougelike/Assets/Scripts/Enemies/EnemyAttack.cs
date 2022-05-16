@@ -8,6 +8,9 @@ public class EnemyAttack : MonoBehaviour
     Health health;
     public float damage = 10f;
     public float range = 10f;
+    public GameObject attackPoint;
+    public float AttackDelayMax;
+    private float AttackDelay;
 
     private void Awake()
     {
@@ -16,32 +19,37 @@ public class EnemyAttack : MonoBehaviour
 
     void Update()
     {
+        attackPoint.transform.localPosition = GetMovement.dir.normalized * range;
         Attack();
     }
 
     void Attack()
     {
-        
-        
-            RaycastHit2D hit2D = Physics2D.Raycast(gameObject.transform.position, Vector2.left, range);
-        Debug.DrawLine(gameObject.transform.position, Vector2.left, color: Color.blue);
-        if (hit2D.collider != null)
-        {
-            print(hit2D.collider.name);
 
-        }   
-        if (hit2D.collider == GameObject.FindGameObjectWithTag("Player"))
+        if (AttackDelay <= 0)
+        {
+            RaycastHit2D hit2D = Physics2D.Raycast(attackPoint.transform.position, GetMovement.dir, range);
+
+            if (hit2D.collider != null)
+            {
+                print(hit2D.collider.tag);
+
+            }
+            if (hit2D.collider.name == ("Player"))
             {
                 health = hit2D.collider.GetComponent<Health>();
                 health.CurrentHealth -= damage;
-            print("hello");
-
+                print("hello");
+                AttackDelay = AttackDelayMax;
             }
-
-
+            
+        }
+        if (AttackDelay >= 0)
+        {
+            AttackDelay -= Time.deltaTime;
+        }
 
         
-
-
     }
+    
 }
