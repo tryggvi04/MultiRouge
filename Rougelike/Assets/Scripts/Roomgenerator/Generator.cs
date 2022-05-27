@@ -13,6 +13,7 @@ public class Generator: MonoBehaviour
     private RoomTemplate templates;
     private bool spawned = false;
     public float waitTime = 10f;
+    public int maxEnemies = 0;
   
   
    
@@ -39,29 +40,29 @@ public class Generator: MonoBehaviour
                     // need Bottom
                     rand = Random.Range(0, templates.bottomRooms.Length);
                     Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
+                   
 
-                }
+            }
                 else if (openingDirection == 2)
                 {
                     // need Top
                     rand = Random.Range(0, templates.topRooms.Length);
-                    Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
-
-                }
+;
+            }
                 else if (openingDirection == 3)
                 {
                     // need Left
                     rand = Random.Range(0, templates.leftRooms.Length);
                     Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
-
-                }
+                  
+            }
                 else if (openingDirection == 4)
                 {
                     // need Right
                     rand = Random.Range(0, templates.rightRooms.Length);
                     Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
-
-                }
+                   
+            }
              }
            
        

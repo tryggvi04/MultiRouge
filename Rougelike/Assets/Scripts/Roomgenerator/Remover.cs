@@ -9,13 +9,13 @@ public class Remover : MonoBehaviour
         if (other.CompareTag("Spawnpoint"))
         {
 
-            Destroy(other.gameObject);
+           Destroy(other.gameObject);
 
         }
         if (other.CompareTag("Wall"))
         {
 
-            Destroy(other.gameObject);
+          //  Destroy(other.gameObject);
 
         }
 

@@ -567,6 +567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   waitTime: 4
+  maxEnemies: 0
 --- !u!61 &5399384191125756830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2404,6 +2405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 0
   waitTime: 4
+  maxEnemies: 0
 --- !u!1 &4944284779594162510
 GameObject:
   m_ObjectHideFlags: 0

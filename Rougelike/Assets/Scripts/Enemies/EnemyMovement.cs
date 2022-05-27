@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     public Transform target;
     public float minDistance = 2f;
     public Vector3 dir;
-    public Vector2 directDir;
+   
     
   
     
@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
     }
 

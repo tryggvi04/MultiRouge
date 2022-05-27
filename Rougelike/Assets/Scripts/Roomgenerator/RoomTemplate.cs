@@ -8,6 +8,7 @@ public class RoomTemplate : MonoBehaviour
     public GameObject[] topRooms;
     public GameObject[] leftRooms;
     public GameObject[] rightRooms;
+    public GameObject[] easyEnemies;
     public GameObject closedRoom;
     public List<GameObject> rooms;
     public float waitTime;
