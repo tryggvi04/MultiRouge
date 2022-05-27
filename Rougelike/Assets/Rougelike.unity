@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406bc5e1e544de744b26852eaf848e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 50
+  Speed: 200
   dashLenght: 544
   dashDelay: 2
   dashTimer: 0

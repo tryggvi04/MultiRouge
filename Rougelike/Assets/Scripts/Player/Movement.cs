@@ -34,17 +34,13 @@ public class Movement : MonoBehaviour
     {
         if (canWalk == true)
         {
+            rb.velocity = new Vector2(0, 0);
             playerInputWalk = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * Speed;
             rb.AddForce(playerInputWalk);
             if (rb.velocity != new Vector2(0, 0))
             {
                 direction = rb.velocity;
             }
-            rb.velocity = new Vector2(0, 0);
-            
-
-
-            
         }
     }
     void Dash()

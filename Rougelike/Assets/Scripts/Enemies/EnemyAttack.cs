@@ -32,7 +32,7 @@ public class EnemyAttack : MonoBehaviour
 
             if (hit2D.collider != null)
             {
-                print(hit2D.collider.tag);
+                //print(hit2D.collider.tag);
 
             }
             if (hit2D.collider.name == ("Player"))
