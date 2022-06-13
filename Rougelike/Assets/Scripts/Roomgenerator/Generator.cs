@@ -47,7 +47,8 @@ public class Generator: MonoBehaviour
                 {
                     // need Top
                     rand = Random.Range(0, templates.topRooms.Length);
-;
+                    Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
+                
             }
                 else if (openingDirection == 3)
                 {
