@@ -29,11 +29,13 @@ public class Attacking : MonoBehaviour
         {
             if (Input.GetButton("Attack"))
             {
+                print("attacking baaboo");
+
                 RaycastHit2D hit = Physics2D.Raycast(attackPoint.transform.position, Movement.direction, AttackRange);
 
                 if (hit.collider != null && hit.collider.gameObject.CompareTag("Enemy"))
                 {
-                  
+                    print("wamo shlamo");
                     hit.collider.GetComponent<Health>().CurrentHealth -= Damage;
                     AttackDelay = AttackDelayMax;
                 }

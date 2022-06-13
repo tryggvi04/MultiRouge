@@ -39,7 +39,7 @@ public class EnemyAttack : MonoBehaviour
             {
                 health = hit2D.collider.GetComponent<Health>();
                 health.CurrentHealth -= damage;
-                print("hello");
+                //print("hello");
                 AttackDelay = AttackDelayMax;
             }
             

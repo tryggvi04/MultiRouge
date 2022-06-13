@@ -7,15 +7,15 @@ public class EnemyDeath : MonoBehaviour
     Health health;
     void Start()
     {
-        health = gameObject.GetComponentInChildren<Health>();
+        health = gameObject.GetComponent<Health>();
     }
 
     
     void Update()
     {
         Death();
-
     }
+
     void Death()
     {
         if (health.Dead == true)

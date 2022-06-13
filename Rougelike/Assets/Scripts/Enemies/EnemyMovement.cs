@@ -14,13 +14,13 @@ public class EnemyMovement : MonoBehaviour
 
     void ActiveUpdate()
     {
-        Debug.Log("Active Update");
+        //Debug.Log("Active Update");
         Move();
     }
 
     void IdleUpdate()
     {
-        Debug.Log("Idle Update");
+        //Debug.Log("Idle Update");
         CheckForPlayer();
     }
 

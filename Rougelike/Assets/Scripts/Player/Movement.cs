@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
     }
    
    
-    void Update()
+    void FixedUpdate()
     {
         Dash();
         Walk();
