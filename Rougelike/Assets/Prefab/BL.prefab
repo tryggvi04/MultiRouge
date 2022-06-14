@@ -2166,6 +2166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  WallsPrefab: {fileID: 5121308265383215147, guid: 4495f83a80118b046b20f09364ca3d90,
+    type: 3}
+  wall: {fileID: 0}
 --- !u!114 &3440018461298346722
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,7 +23,10 @@ public class EnemyGenerator : MonoBehaviour
         Invoke("Spawn", 0.1f);
     }
 
-
+    private void Update()
+    {
+        EnemiesLeft.RemoveAll(s => s == null);
+    }
 
 
 

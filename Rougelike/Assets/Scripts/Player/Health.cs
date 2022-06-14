@@ -9,12 +9,16 @@ public class Health : MonoBehaviour
     public float CurrentHealth;
     public float MaxHealth;
    public bool Dead = false;
+    EnemyGenerator GetEnemy;
     
-    void Start()
+    void Awake()
     {
         CurrentHealth = MaxHealth;
         HealthBar = gameObject.GetComponentInChildren<Slider>();
-        
+        if (gameObject.name != ("Player"))
+        {
+            GetEnemy = GetComponentInParent<EnemyGenerator>();
+        }
     }
 
     
@@ -23,8 +27,9 @@ public class Health : MonoBehaviour
         HealthBar.value = CurrentHealth/MaxHealth;
         if (CurrentHealth <= 0)
         {
+            
             Dead = true;
-
+            
 
         }
     }
