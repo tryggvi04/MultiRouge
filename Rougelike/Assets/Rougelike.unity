@@ -1683,8 +1683,8 @@ MonoBehaviour:
   attackPoint: {fileID: 384014893}
   AttackPointRange: 8.81
   Damage: 25
-  AttackDelay: 2
-  AttackDelayMax: 2
+  AttackDelay: 1
+  AttackDelayMax: 1
 --- !u!1 &1301566081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 860623396716723085, guid: 0e40c237dee56d7499b535f844b852d2,

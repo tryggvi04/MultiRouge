@@ -27,8 +27,6 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake()
     {
-        // they spawn too big, setting the size
-        gameObject.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
         GetPlayer = GetComponentInParent<PlayerDetector>();
         rb2D = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
