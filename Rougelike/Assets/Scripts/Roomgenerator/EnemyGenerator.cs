@@ -37,7 +37,7 @@ public class EnemyGenerator : MonoBehaviour
             for (int i = 0; i < enemiesCount; i++)
             {
                 rand = Random.Range(0, maxEnemies);
-                Instantiate(templates.easyEnemies[rand], transform.position, templates.easyEnemies[rand].transform.rotation, gameObject.transform);
+                Instantiate(templates.easyEnemies[rand], transform.position += new Vector3(rand, rand, 0), templates.easyEnemies[rand].transform.rotation, gameObject.transform);
             }
                
             

@@ -11,21 +11,25 @@ public class EnemyMovement : MonoBehaviour
     public Transform target;
     public float minDistance = 2f;
     public Vector3 dir;
+    PlayerDetector GetPlayer;
 
     void ActiveUpdate()
     {
-        //Debug.Log("Active Update");
+       Debug.Log("Active Update");
         Move();
     }
 
     void IdleUpdate()
     {
-        //Debug.Log("Idle Update");
+        Debug.Log("Idle Update");
         CheckForPlayer();
     }
 
     void Awake()
     {
+        // they spawn too big, setting the size
+        gameObject.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
+        GetPlayer = GetComponentInParent<PlayerDetector>();
         rb2D = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -55,16 +59,20 @@ public class EnemyMovement : MonoBehaviour
         {
             rb2D.MovePosition(rb2D.transform.position + dir * Speed * Time.fixedDeltaTime);
         }
+        if (GetPlayer.isPlayer == false)
+        {
+            //Swap updates
+            stateUpdate = idleUpdate;
+        }
     }
 
     void CheckForPlayer()
     {
-        //Temporary solution until we get the room system working
-        float playerDistance = Mathf.Sqrt(Mathf.Pow(transform.position.x - target.transform.position.x, 2) + Mathf.Pow(transform.position.y - target.transform.position.y, 2));
-        if (playerDistance < 7)
+        if (GetPlayer.isPlayer == true) 
         {
             //Swap updates
             stateUpdate = activeUpdate;
         }
+        
     }
 }
