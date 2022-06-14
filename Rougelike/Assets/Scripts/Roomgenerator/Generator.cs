@@ -16,6 +16,7 @@ public class Generator: MonoBehaviour
     private RoomTemplate templates;
     private bool spawned = false;
     public float waitTime = 10f;
+    GameObject temp;
    
   
   
@@ -43,7 +44,8 @@ public class Generator: MonoBehaviour
                 {
                     // need Bottom
                     rand = Random.Range(0, templates.bottomRooms.Length);
-                    Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
+                    temp = Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
+                    temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
 
                 }
@@ -51,21 +53,24 @@ public class Generator: MonoBehaviour
                 {
                     // need Top
                     rand = Random.Range(0, templates.topRooms.Length);
-                    Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
+                    temp = Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
+                    temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
                 }
                 else if (openingDirection == 3)
                 {
                     // need Left
                     rand = Random.Range(0, templates.leftRooms.Length);
-                    Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
+                    temp = Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
+                    temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
                 }
                 else if (openingDirection == 4)
                 {
                     // need Right
                     rand = Random.Range(0, templates.rightRooms.Length);
-                    Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
+                    temp = Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
+                    temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
                 }
             }
@@ -82,30 +87,33 @@ public class Generator: MonoBehaviour
                 {
                     // need Bottom
                   
-                    Instantiate(templates.bottomRooms[0], transform.position, templates.bottomRooms[0].transform.rotation);
+                    temp = Instantiate(templates.bottomRooms[0], transform.position, templates.bottomRooms[0].transform.rotation);
+                    temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
 
                 }
                 else if (openingDirection == 2)
                 {
                     // need Top
-                 ;
-                    Instantiate(templates.topRooms[0], transform.position, templates.topRooms[0].transform.rotation);
+                 
+                    temp = Instantiate(templates.topRooms[0], transform.position, templates.topRooms[0].transform.rotation);
+                    temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
                 }
                 else if (openingDirection == 3)
                 {
                     // need Left
                     
-                    Instantiate(templates.leftRooms[0], transform.position, templates.leftRooms[0].transform.rotation);
+                    temp = Instantiate(templates.leftRooms[0], transform.position, templates.leftRooms[0].transform.rotation);
+                    temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
                 }
                 else if (openingDirection == 4)
                 {
                     // need Right
                    
-                    Instantiate(templates.rightRooms[0], transform.position, templates.rightRooms[0].transform.rotation);
-
+                    temp = Instantiate(templates.rightRooms[0], transform.position, templates.rightRooms[0].transform.rotation);
+                    temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
                 }
             }
 

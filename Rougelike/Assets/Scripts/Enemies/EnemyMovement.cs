@@ -15,13 +15,13 @@ public class EnemyMovement : MonoBehaviour
 
     void ActiveUpdate()
     {
-       Debug.Log("Active Update");
+       //Debug.Log("Active Update");
         Move();
     }
 
     void IdleUpdate()
     {
-        Debug.Log("Idle Update");
+        //Debug.Log("Idle Update");
         CheckForPlayer();
     }
 
@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Move()
     {
-        dir = (target.transform.position - rb2D.transform.position).normalized;
+        dir = Vector3.Normalize(target.transform.position - rb2D.transform.position);
 
         if (Vector3.Distance(rb2D.position, target.transform.position) > minDistance)
         {

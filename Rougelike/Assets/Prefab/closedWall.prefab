@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4220180292102120614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.99905, y: 4.99997, z: -46.877983}
+  m_LocalPosition: {x: -14.99905, y: 4.99997, z: 0}
   m_LocalScale: {x: 4.9995823, y: 4.9999375, z: 1}
   m_Children:
   - {fileID: 7969723203028971635}
@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5926858559478273427}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -4.1332483}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1216359882591286536}
@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 0
+  MaxRooms: 8
+  waitTime: 10
 --- !u!61 &3969271593621911682
 BoxCollider2D:
   m_ObjectHideFlags: 0
