@@ -566,8 +566,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
+  MaxRooms: 8
   waitTime: 4
-  maxEnemies: 0
 --- !u!61 &5399384191125756830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2656,7 +2656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5224206731055513104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -232.04, y: -2.5043707, z: -0.9145508}
+  m_LocalPosition: {x: -232.04, y: -2.5043707, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3060274762114624174}

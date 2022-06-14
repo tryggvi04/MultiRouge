@@ -14,6 +14,7 @@ public class EnemyGenerator : MonoBehaviour
     // how many enemies should spawn
     public int enemiesCount;
     private int maxEnemiesSpawn = 4;
+  
 
 
     void Start()
@@ -40,7 +41,7 @@ public class EnemyGenerator : MonoBehaviour
             for (int i = 0; i < enemiesCount; i++)
             {
                 rand = Random.Range(0, maxEnemies);
-                Instantiate(templates.easyEnemies[rand], transform.position += new Vector3(rand, rand, 0), templates.easyEnemies[rand].transform.rotation, transform.root);
+                Instantiate(templates.easyEnemies[rand], transform.position, templates.easyEnemies[rand].transform.rotation, gameObject.transform);
             }
                
             

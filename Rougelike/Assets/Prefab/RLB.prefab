@@ -696,8 +696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 1
+  MaxRooms: 8
   waitTime: 4
-  maxEnemies: 0
 --- !u!61 &4560429284782168464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2070,7 +2070,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4312054490832337020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 67.54585, y: -95.54481, z: -9.952396}
+  m_LocalPosition: {x: 67.54585, y: -95.54481, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6350514824594784436}
@@ -2461,8 +2461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 4
+  MaxRooms: 8
   waitTime: 4
-  maxEnemies: 0
 --- !u!61 &6643811470805620129
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3735,8 +3735,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
+  MaxRooms: 8
   waitTime: 4
-  maxEnemies: 0
 --- !u!61 &7984564630257309291
 BoxCollider2D:
   m_ObjectHideFlags: 0
