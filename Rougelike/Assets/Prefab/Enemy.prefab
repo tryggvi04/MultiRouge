@@ -260,8 +260,9 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   Speed: 4.4
   target: {fileID: 0}
-  minDistance: 8.5
+  minDistance: 3
   dir: {x: 0, y: 0, z: 0}
+  _test: 0
 --- !u!114 &1831401885018600682
 MonoBehaviour:
   m_ObjectHideFlags: 0

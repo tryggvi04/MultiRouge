@@ -13,6 +13,9 @@ public class EnemyMovement : MonoBehaviour
     public Vector3 dir;
     PlayerDetector GetPlayer;
 
+    [SerializeField]
+    private float _test;
+
     void ActiveUpdate()
     {
        //Debug.Log("Active Update");
