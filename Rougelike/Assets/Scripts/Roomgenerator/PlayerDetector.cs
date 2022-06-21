@@ -44,11 +44,15 @@ public class PlayerDetector : MonoBehaviour
             
 
         }
-        if (enemyGen.EnemiesLeft.Count == 0)
+        //temporary until we have a better boss system
+        if (GetComponent<EnemyGenerator>() != null)
         {
-            Destroy(wall);
+            if (enemyGen.EnemiesLeft.Count == 0)
+            {
+                Destroy(wall);
 
 
+            }
         }
     }
 
