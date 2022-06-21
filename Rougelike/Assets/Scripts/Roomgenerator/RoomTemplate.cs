@@ -9,6 +9,10 @@ public class RoomTemplate : MonoBehaviour
     public GameObject[] leftRooms;
     public GameObject[] rightRooms;
     public GameObject[] easyEnemies;
+    public GameObject bottomRoom;
+    public GameObject topRoom;
+    public GameObject leftRoom;
+    public GameObject rightRoom;
     public GameObject closedRoom;
     public List<GameObject> rooms;
     public float waitTime;
@@ -24,6 +28,7 @@ public class RoomTemplate : MonoBehaviour
                 if (i == rooms.Count - 1)
                 {
                     Instantiate(Boss, rooms[i].transform.position, Quaternion.identity);
+                    Destroy(rooms[i]);
                     spawnedBoss = true;
 
                 }

@@ -83,11 +83,12 @@ public class Generator: MonoBehaviour
         {
             if (spawned == false)
             {
+                
                 if (openingDirection == 1)
                 {
                     // need Bottom
                   
-                    temp = Instantiate(templates.bottomRooms[0], transform.position, templates.bottomRooms[0].transform.rotation);
+                    temp = Instantiate(templates.bottomRoom, transform.position, templates.bottomRoom.transform.rotation);
                     temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
 
@@ -96,7 +97,7 @@ public class Generator: MonoBehaviour
                 {
                     // need Top
                  
-                    temp = Instantiate(templates.topRooms[0], transform.position, templates.topRooms[0].transform.rotation);
+                    temp = Instantiate(templates.topRoom, transform.position, templates.topRoom.transform.rotation);
                     temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
                 }
@@ -104,7 +105,7 @@ public class Generator: MonoBehaviour
                 {
                     // need Left
                     
-                    temp = Instantiate(templates.leftRooms[0], transform.position, templates.leftRooms[0].transform.rotation);
+                    temp = Instantiate(templates.leftRoom, transform.position, templates.leftRoom.transform.rotation);
                     temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
 
                 }
@@ -112,7 +113,7 @@ public class Generator: MonoBehaviour
                 {
                     // need Right
                    
-                    temp = Instantiate(templates.rightRooms[0], transform.position, templates.rightRooms[0].transform.rotation);
+                    temp = Instantiate(templates.rightRoom, transform.position, templates.rightRoom.transform.rotation);
                     temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
                 }
             }
