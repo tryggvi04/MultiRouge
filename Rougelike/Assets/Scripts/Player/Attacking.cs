@@ -31,7 +31,8 @@ public class Attacking : MonoBehaviour
             {
                 print("attacking baaboo");
 
-                RaycastHit2D hit = Physics2D.Raycast(attackPoint.transform.position, Movement.direction, AttackRange);
+                RaycastHit2D hit = Physics2D.Raycast(attackPoint.transform.position, Movement.direction);
+               
 
                 if (hit.collider != null && hit.collider.gameObject.CompareTag("Enemy"))
                 {

@@ -7,8 +7,8 @@ public class EnemyGenerator : MonoBehaviour
    
 
     private int rand;
+    private int spawn;
     RoomTemplate templates;
-    private bool spawned = false;
     public int maxEnemies = 0;
     public List<GameObject> EnemiesLeft;
     // how many enemies should spawn
@@ -34,22 +34,17 @@ public class EnemyGenerator : MonoBehaviour
 
     void Spawn()
     {
-
-        if (spawned == false)
-        {
+                
             enemiesCount = Random.Range(1, maxEnemiesSpawn);
             for (int i = 0; i < enemiesCount; i++)
             {
+                Random.InitState(System.DateTime.Now.Millisecond);
                 rand = Random.Range(0, maxEnemies);
-                Instantiate(templates.easyEnemies[rand], transform.position, templates.easyEnemies[rand].transform.rotation, gameObject.transform);
+                spawn = Random.Range(-2, 2);
+                Debug.Log(spawn);
+                Instantiate(templates.easyEnemies[rand], transform.position += new Vector3(spawn, spawn, 0), templates.easyEnemies[rand].transform.rotation, gameObject.transform);
             }
                
-            
-        }
-
-
-
-        spawned = true;
     }
 
 
