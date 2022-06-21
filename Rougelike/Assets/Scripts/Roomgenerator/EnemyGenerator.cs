@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-   
+
 
     private int rand;
-    private int spawn;
+    private int spawnX;
+    private int spawnY;
     RoomTemplate templates;
     public int maxEnemies = 0;
     public List<GameObject> EnemiesLeft;
     // how many enemies should spawn
     public int enemiesCount;
     private int maxEnemiesSpawn = 4;
-  
+
 
 
     void Start()
@@ -34,17 +35,15 @@ public class EnemyGenerator : MonoBehaviour
 
     void Spawn()
     {
-                
             enemiesCount = Random.Range(1, maxEnemiesSpawn);
             for (int i = 0; i < enemiesCount; i++)
             {
                 Random.InitState(System.DateTime.Now.Millisecond);
                 rand = Random.Range(0, maxEnemies);
-                spawn = Random.Range(-2, 2);
-                Debug.Log(spawn);
-                Instantiate(templates.easyEnemies[rand], transform.position += new Vector3(spawn, spawn, 0), templates.easyEnemies[rand].transform.rotation, gameObject.transform);
+                spawnX = Random.Range(-3, 3);
+                spawnY = Random.Range(-3, 3);
+                Instantiate(templates.easyEnemies[rand], transform.position + new Vector3(spawnX, spawnY, 0), templates.easyEnemies[rand].transform.rotation, gameObject.transform);
             }
-               
     }
 
 

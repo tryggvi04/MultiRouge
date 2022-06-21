@@ -6,12 +6,21 @@ public class EnemyMovement : MonoBehaviour
 {
     private delegate void StateUpdate();
 
-    public Rigidbody2D rb2D;
-    public float Speed;
-    public Transform target;
-    public float minDistance = 2f;
+    [SerializeField]
+    Rigidbody2D rb2D;
+    [SerializeField]
+    float Speed;
+    [SerializeField]
+    Transform target;
+    [SerializeField]
+    float minDistance = 2f;
     public Vector3 dir;
     PlayerDetector GetPlayer;
+
+    private float chargeUpTimer;
+    private float chargeUpTime;
+    [SerializeField]
+    private float maxChargeTime;
 
     [SerializeField]
     private float _test;
@@ -57,6 +66,10 @@ public class EnemyMovement : MonoBehaviour
     {
         dir = Vector3.Normalize(target.transform.position - rb2D.transform.position);
 
+        //rb2D.MovePosition();
+
+        /*dir = Vector3.Normalize(target.transform.position - rb2D.transform.position);
+
         if (Vector3.Distance(rb2D.position, target.transform.position) > minDistance)
         {
             rb2D.MovePosition(rb2D.transform.position + dir * Speed * Time.fixedDeltaTime);
@@ -65,16 +78,16 @@ public class EnemyMovement : MonoBehaviour
         {
             //Swap updates
             stateUpdate = idleUpdate;
-        }
+        }*/
     }
 
     void CheckForPlayer()
     {
-        if (GetPlayer.isPlayer == true) 
+        if (GetPlayer.isPlayer == true)
         {
             //Swap updates
             stateUpdate = activeUpdate;
         }
-        
+
     }
 }
