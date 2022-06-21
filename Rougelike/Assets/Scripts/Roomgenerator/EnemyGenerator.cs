@@ -35,10 +35,10 @@ public class EnemyGenerator : MonoBehaviour
 
     void Spawn()
     {
-            enemiesCount = Random.Range(1, maxEnemiesSpawn);
+        Random.InitState(System.DateTime.Now.Millisecond);
+        enemiesCount = Random.Range(1, maxEnemiesSpawn);
             for (int i = 0; i < enemiesCount; i++)
-            {
-                Random.InitState(System.DateTime.Now.Millisecond);
+            {              
                 rand = Random.Range(0, maxEnemies);
                 spawnX = Random.Range(-3, 3);
                 spawnY = Random.Range(-3, 3);
