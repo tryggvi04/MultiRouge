@@ -33,8 +33,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private float forceChargeRange = 2f;
     [SerializeField]
-    private float dashTime = 5f;
+    private float dashTime = 1f;
     private float dashTimer = 0f;
+
+    [SerializeField]
+    private float graceTime = 1f;
+    private float graceTimer = 0f;
+    private Vector3 randomDir;
 
     [SerializeField]
     private float _test;
@@ -66,14 +71,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if (dashTimer == 0f)
         {
-            Debug.Log("dashing");
             gameObject.transform.localScale = new Vector3(0.06f, 0.06f, 0.06f);
             rb2D.AddForce(GetDir() * dashForce, ForceMode2D.Impulse);
         }
         dashTimer += Time.fixedDeltaTime;
         if (dashTimer > dashTime)
         {
-            stateUpdate = activeUpdate;
+            stateUpdate = randomUpdate;
             gameObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
             dashTimer = 0f;
         }
@@ -86,7 +90,18 @@ public class EnemyMovement : MonoBehaviour
 
     void RandomUpdate()
     {
-
+        if (graceTimer == 0f)
+        {
+            randomDir = GetRandomDir();
+        }
+        rb2D.AddForce(new Vector2(-rb2D.velocity.x, -rb2D.velocity.y));
+        rb2D.AddForce(randomDir * walkSpeed);
+        graceTimer += Time.fixedDeltaTime;
+        if (graceTimer > graceTime)
+        {
+            stateUpdate = activeUpdate;
+            graceTimer = 0f;
+        }
     }
 
     void Awake()
@@ -125,18 +140,16 @@ public class EnemyMovement : MonoBehaviour
 
     void Seek()
     {
-        Debug.Log("seeking");
         dir = GetDir();
 
         if (Vector3.Distance(target.transform.position, transform.position) > chargeRange)
         {
-            //rb2D.velocity.x = 0;
-            //rb2D.velocity.y = 0;
+            rb2D.AddForce(new Vector2(-rb2D.velocity.x, -rb2D.velocity.y));
             rb2D.AddForce(dir * walkSpeed);
         }
         else
         {
-            chargeUpTime = Random.Range(minChargeTime, maxChargeTime);
+            chargeUpTime = maxChargeTime;
             stateUpdate = chargeUpdate;
         }
 
@@ -168,5 +181,10 @@ public class EnemyMovement : MonoBehaviour
     Vector3 GetDir()
     {
         return Vector3.Normalize(target.transform.position - rb2D.transform.position);
+    }
+
+    Vector3 GetRandomDir()
+    {
+        return Vector3.Normalize(new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0));
     }
 }

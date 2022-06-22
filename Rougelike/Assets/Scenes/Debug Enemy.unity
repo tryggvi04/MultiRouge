@@ -301,6 +301,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1831401885018600681, guid: 7c1be24b96793df47b9678638e843e63,
         type: 3}
+      propertyPath: dashTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831401885018600681, guid: 7c1be24b96793df47b9678638e843e63,
+        type: 3}
       propertyPath: dashForce
       value: 7.5
       objectReference: {fileID: 0}
