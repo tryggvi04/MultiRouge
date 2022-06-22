@@ -17,10 +17,24 @@ public class EnemyMovement : MonoBehaviour
     public Vector3 dir;
     PlayerDetector GetPlayer;
 
-    private float chargeUpTimer;
+    [SerializeField]
+    private float walkSpeed = 5f;
+    [SerializeField]
+    private float dashForce = 20f;
+
+    private float chargeUpTimer = 0f;
     private float chargeUpTime;
     [SerializeField]
-    private float maxChargeTime;
+    private float maxChargeTime = 1.5f;
+    [SerializeField]
+    private float minChargeTime = 1.5f;
+    [SerializeField]
+    private float chargeRange = 4f;
+    [SerializeField]
+    private float forceChargeRange = 2f;
+    [SerializeField]
+    private float dashTime = 5f;
+    private float dashTimer = 0f;
 
     [SerializeField]
     private float _test;
@@ -28,7 +42,7 @@ public class EnemyMovement : MonoBehaviour
     void ActiveUpdate()
     {
        //Debug.Log("Active Update");
-        Move();
+        Seek();
     }
 
     void IdleUpdate()
@@ -37,9 +51,48 @@ public class EnemyMovement : MonoBehaviour
         CheckForPlayer();
     }
 
+    void ChargeUpdate()
+    {
+        gameObject.transform.localScale = new Vector3(0.04f, 0.04f, 0.04f);
+        chargeUpTimer += Time.fixedDeltaTime;
+        if (chargeUpTimer > chargeUpTime)
+        {
+            stateUpdate = dashUpdate;
+            chargeUpTimer = 0;
+        }
+    }
+
+    void DashUpdate()
+    {
+        if (dashTimer == 0f)
+        {
+            Debug.Log("dashing");
+            gameObject.transform.localScale = new Vector3(0.06f, 0.06f, 0.06f);
+            rb2D.AddForce(GetDir() * dashForce, ForceMode2D.Impulse);
+        }
+        dashTimer += Time.fixedDeltaTime;
+        if (dashTimer > dashTime)
+        {
+            stateUpdate = activeUpdate;
+            gameObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+            dashTimer = 0f;
+        }
+    }
+
+    void StunUpdate()
+    {
+
+    }
+
+    void RandomUpdate()
+    {
+
+    }
+
     void Awake()
     {
-        gameObject.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
+        //sorry testing without
+        //gameObject.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
         GetPlayer = GetComponentInParent<PlayerDetector>();
         rb2D = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -47,12 +100,20 @@ public class EnemyMovement : MonoBehaviour
 
     private StateUpdate activeUpdate;
     private StateUpdate idleUpdate;
+    private StateUpdate chargeUpdate;
+    private StateUpdate dashUpdate;
+    private StateUpdate stunUpdate;
     private StateUpdate stateUpdate;
+    private StateUpdate randomUpdate;
 
     void Start()
     {
         activeUpdate = new StateUpdate(ActiveUpdate);
         idleUpdate = new StateUpdate(IdleUpdate);
+        chargeUpdate = new StateUpdate(ChargeUpdate);
+        dashUpdate = new StateUpdate(DashUpdate);
+        stunUpdate = new StateUpdate(StunUpdate);
+        randomUpdate = new StateUpdate(RandomUpdate);
         stateUpdate = idleUpdate;
     }
 
@@ -62,9 +123,22 @@ public class EnemyMovement : MonoBehaviour
         stateUpdate();
     }
 
-    void Move()
+    void Seek()
     {
-        dir = Vector3.Normalize(target.transform.position - rb2D.transform.position);
+        Debug.Log("seeking");
+        dir = GetDir();
+
+        if (Vector3.Distance(target.transform.position, transform.position) > chargeRange)
+        {
+            //rb2D.velocity.x = 0;
+            //rb2D.velocity.y = 0;
+            rb2D.AddForce(dir * walkSpeed);
+        }
+        else
+        {
+            chargeUpTime = Random.Range(minChargeTime, maxChargeTime);
+            stateUpdate = chargeUpdate;
+        }
 
         //rb2D.MovePosition();
 
@@ -89,5 +163,10 @@ public class EnemyMovement : MonoBehaviour
             stateUpdate = activeUpdate;
         }
 
+    }
+
+    Vector3 GetDir()
+    {
+        return Vector3.Normalize(target.transform.position - rb2D.transform.position);
     }
 }

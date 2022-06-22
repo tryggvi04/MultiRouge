@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Sprites;
-using TMPro; 
+using TMPro;
 
 public class Movement : MonoBehaviour
 {
@@ -18,13 +18,13 @@ public class Movement : MonoBehaviour
     public TextMeshProUGUI DelayText;
     public Vector2 direction;
 
- 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-   
-   
+
+
     void FixedUpdate()
     {
         Dash();
@@ -54,16 +54,16 @@ public class Movement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Dash"))
                 {
-                   
+
                     canWalk = false;
                     rb.AddForce(playerInputDash);
                     dashTimer = dashDelay;
-                   
+
                 }
 
 
             }
-           
+
 
         }
         if (dashTimer <= dashDelay - dashTime)
@@ -77,7 +77,7 @@ public class Movement : MonoBehaviour
             dashTimer -= Time.deltaTime;
 
         }
-        
-        DelayText.text = Mathf.Round(dashTimer).ToString("");
+
+        //DelayText.text = Mathf.Round(dashTimer).ToString("");
     }
 }

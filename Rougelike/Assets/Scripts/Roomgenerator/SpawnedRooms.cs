@@ -6,7 +6,7 @@ public class SpawnedRooms : MonoBehaviour
 {
     private RoomTemplate template;
 
-     void Start()
+    void Start()
     {
         template = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplate>();
         template.rooms.Add(this.gameObject);
