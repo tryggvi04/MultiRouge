@@ -11,11 +11,25 @@ public class Health : MonoBehaviour
    public bool Dead = false;
     EnemyGenerator GetEnemy;
 
+
+    //only for player
+    [SerializeField]
+    private bool Player;
+    [SerializeField]
+    private float Iframes;
+    [SerializeField]
+    private float Iframes_Timer;
+
+
     void Awake()
     {
+        if (gameObject.name == "Player")
+        {
+            Player = true;
+        }
         CurrentHealth = MaxHealth;
         HealthBar = gameObject.GetComponentInChildren<Slider>();
-        if (gameObject.name != ("Player"))
+        if (Player == false)
         {
             GetEnemy = GetComponentInParent<EnemyGenerator>();
         }
@@ -24,6 +38,7 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+        Iframes -= Time.deltaTime;
         HealthBar.value = CurrentHealth/MaxHealth;
         if (CurrentHealth <= 0)
         {
@@ -33,7 +48,20 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        CurrentHealth -= amount;
+        
+        if (Player == true)
+        {
+           if (Iframes <= 0)
+            {
+                CurrentHealth -= amount;
+                Iframes = Iframes_Timer;
+            }
+
+        }
+        else{
+
+            CurrentHealth -= amount;
+        }
     }
 
 }

@@ -17,11 +17,13 @@ public class Movement : MonoBehaviour
     public float dashTime;
     public TextMeshProUGUI DelayText;
     public Vector2 direction;
+    private Health health;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = GetComponent<Health>();
     }
 
 
@@ -80,4 +82,5 @@ public class Movement : MonoBehaviour
 
         DelayText.text = Mathf.Round(dashTimer).ToString("");
     }
+   
 }
