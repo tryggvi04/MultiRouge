@@ -15,7 +15,7 @@ public class Remover : MonoBehaviour
         if (other.CompareTag("Wall"))
         {
 
-          //  Destroy(other.gameObject);
+        Destroy(other.gameObject);
 
         }
 

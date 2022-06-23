@@ -107,8 +107,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake()
     {
-        //sorry testing without
-        //gameObject.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
+        
         GetPlayer = GetComponentInParent<PlayerDetector>();
         rb2D = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
