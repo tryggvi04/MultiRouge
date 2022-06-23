@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     public float MaxHealth;
    public bool Dead = false;
     EnemyGenerator GetEnemy;
-    
+
     void Awake()
     {
         CurrentHealth = MaxHealth;
@@ -21,17 +21,19 @@ public class Health : MonoBehaviour
         }
     }
 
-    
+
     void Update()
     {
         HealthBar.value = CurrentHealth/MaxHealth;
         if (CurrentHealth <= 0)
         {
-            
             Dead = true;
-            
-
         }
     }
-    
+
+    public void TakeDamage(float amount)
+    {
+        CurrentHealth -= amount;
+    }
+
 }
