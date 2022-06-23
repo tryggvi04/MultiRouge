@@ -27,8 +27,8 @@ public class RoomTemplate : MonoBehaviour
             {
                 if (i == rooms.Count - 1)
                 {
-                   // Instantiate(Boss, rooms[i].transform.position, Quaternion.identity);
-                   // Destroy(rooms[i]);
+                   Instantiate(Boss, rooms[i].transform.position, Quaternion.identity);
+                   Destroy(rooms[i]);
                     spawnedBoss = true;
 
                 }
