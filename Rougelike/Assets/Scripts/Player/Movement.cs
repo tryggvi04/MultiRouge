@@ -78,6 +78,6 @@ public class Movement : MonoBehaviour
 
         }
 
-        //DelayText.text = Mathf.Round(dashTimer).ToString("");
+        DelayText.text = Mathf.Round(dashTimer).ToString("");
     }
 }

@@ -451,6 +451,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &638402274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6076300432439662244, guid: 7583f4a8d617a2b4c9433964840bf96b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6076300433431403727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &638402282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638402274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f6de2fd683a774d8da28b4bf5f9158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &864836959
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,22 +899,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottomRooms:
-  - {fileID: 6644225516279670953, guid: 7dbab63bbe3959141a73eb4f94f04327, type: 3}
   - {fileID: 4060836215673190219, guid: 72df4b59ca3a85a46a5a33ab1d153c7e, type: 3}
   - {fileID: 2770458523688492062, guid: be09f89481981464e89dcfc89e226e98, type: 3}
   - {fileID: 4056445953979819589, guid: 919f7afb9573ced4e8f8386b2f1abc5a, type: 3}
   topRooms:
-  - {fileID: 458854207526171043, guid: 0cf56647b4328624aaf5cb9b43b36bbe, type: 3}
   - {fileID: 4056445953979819589, guid: 919f7afb9573ced4e8f8386b2f1abc5a, type: 3}
   - {fileID: 2707553032702501885, guid: b1f500fdca07b1a4c9c0610d66739f4b, type: 3}
   - {fileID: 6682289994111174607, guid: 82b1f063ff464fc4ca7e82f1dfc8e59a, type: 3}
   leftRooms:
-  - {fileID: 5068986475125975616, guid: 4f48610821e3bd240b690f161c3f409d, type: 3}
   - {fileID: 2707553032702501885, guid: b1f500fdca07b1a4c9c0610d66739f4b, type: 3}
   - {fileID: 5805323645254439508, guid: 3d2d641df00561340a5651e5aeb0195d, type: 3}
   - {fileID: 4060836215673190219, guid: 72df4b59ca3a85a46a5a33ab1d153c7e, type: 3}
   rightRooms:
-  - {fileID: 5224206731055513104, guid: cacd3531f5da1e64491a1da9bfce0a5b, type: 3}
   - {fileID: 2770458523688492062, guid: be09f89481981464e89dcfc89e226e98, type: 3}
   - {fileID: 5805323645254439508, guid: 3d2d641df00561340a5651e5aeb0195d, type: 3}
   - {fileID: 6682289994111174607, guid: 82b1f063ff464fc4ca7e82f1dfc8e59a, type: 3}
