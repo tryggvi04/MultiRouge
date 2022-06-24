@@ -46,12 +46,11 @@ public class Attacking : MonoBehaviour
                     //Debug.Log(colCache[i].gameObject.name + " , " + i);
                 }
                 AttackDelay = AttackDelayMax;
-                Debug.Log("starting attack queued " + colCache.Length + " attacks");
                 for (int i = 0; i < colCache.Length; i++)
                 {
-                    Debug.Log("attacking " + colCache[i].gameObject.name);
                     if (colScript.colCache[i].CompareTag("Enemy"))
                     {
+                        Debug.Log("dealt " + Damage + " damage to " + colScript.colCache[i].name);
                         colCache[i].GetComponent<Health>().TakeDamage(Damage);
                     }
                 }

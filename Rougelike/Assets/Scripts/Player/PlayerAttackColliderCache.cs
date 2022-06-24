@@ -62,8 +62,6 @@ public class PlayerAttackColliderCache : MonoBehaviour
         colCache = temp;
 
         colCache[colCache.Length - 1] = col;
-
-        Debug.Log("Collision ENTER " + col.gameObject.name);
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -76,6 +74,5 @@ public class PlayerAttackColliderCache : MonoBehaviour
                 break;
             }
         }
-        Debug.Log("Collision EXIT " + col.gameObject.name);
     }
 }

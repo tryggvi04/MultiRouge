@@ -11,7 +11,6 @@ public class Health : MonoBehaviour
    public bool Dead = false;
     EnemyGenerator GetEnemy;
 
-
     //only for player
     [SerializeField]
     private bool Player;
@@ -40,15 +39,10 @@ public class Health : MonoBehaviour
     {
         Iframes -= Time.deltaTime;
         HealthBar.value = CurrentHealth/MaxHealth;
-        if (CurrentHealth <= 0)
-        {
-            Dead = true;
-        }
     }
 
     public void TakeDamage(float amount)
     {
-
         if (Player == true)
         {
            if (Iframes <= 0)
@@ -62,6 +56,15 @@ public class Health : MonoBehaviour
 
             CurrentHealth -= amount;
         }
+
+        if (CurrentHealth <= 0 && !Dead)
+        {
+            Die();
+        }
     }
 
+    void Die()
+    {
+        Dead = true;
+    }
 }
