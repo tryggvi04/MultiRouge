@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        
+
         if (Player == true)
         {
            if (Iframes <= 0)

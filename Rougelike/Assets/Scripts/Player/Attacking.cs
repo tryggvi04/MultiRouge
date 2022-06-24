@@ -15,7 +15,10 @@ public class Attacking : MonoBehaviour
     public float AttackDelay;
     public float AttackDelayMax;
     private PlayerAttackColliderCache colScript;
-    
+
+    [HideInInspector]
+    public Collider2D[] colCache;
+
 
     private void Start()
     {
@@ -32,19 +35,27 @@ public class Attacking : MonoBehaviour
 
     void MeeleAttack()
     {
+        //Debug.Log("1 " + colCache.Length);
         if (AttackDelay <= 0)
         {
             if (Input.GetButton("Attack"))
             {
-                Debug.Log("attacking " + AttackDelay);
-                AttackDelay = AttackDelayMax;
-                for (int i = 0; i < colScript.colCache.Length; i++)
+                Debug.Log(colCache.Length);
+                for (int i = 0; i < colCache.Length; i++)
                 {
-                    if (colScript.colCache[i].tag == "Enemy")
+                    //Debug.Log(colCache[i].gameObject.name + " , " + i);
+                }
+                AttackDelay = AttackDelayMax;
+                Debug.Log("starting attack queued " + colCache.Length + " attacks");
+                for (int i = 0; i < colCache.Length; i++)
+                {
+                    Debug.Log("attacking " + colCache[i].gameObject.name);
+                    if (colScript.colCache[i].CompareTag("Enemy"))
                     {
-                        colScript.colCache[i].GetComponent<Health>().TakeDamage(Damage);
+                        colCache[i].GetComponent<Health>().TakeDamage(Damage);
                     }
                 }
+                AttackDelay = AttackDelayMax;
 
 
                 //eventually delete, keeping for rollback if needed

@@ -59,7 +59,6 @@ public class EnemyMovement : MonoBehaviour
 
     void ChargeUpdate()
     {
-        gameObject.transform.localScale = new Vector3(0.04f, 0.04f, 0.04f);
         chargeUpTimer += Time.fixedDeltaTime;
         if (chargeUpTimer > chargeUpTime)
         {
@@ -72,14 +71,12 @@ public class EnemyMovement : MonoBehaviour
     {
         if (dashTimer == 0f)
         {
-            gameObject.transform.localScale = new Vector3(0.06f, 0.06f, 0.06f);
             rb2D.AddForce(GetDir() * dashForce, ForceMode2D.Impulse);
         }
         dashTimer += Time.fixedDeltaTime;
         if (dashTimer > dashTime)
         {
             stateUpdate = randomUpdate;
-            gameObject.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
             dashTimer = 0f;
         }
     }
@@ -107,10 +104,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake()
     {
-        
+
         GetPlayer = GetComponentInParent<PlayerDetector>();
         rb2D = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.Find("Player").transform;
     }
 
     private StateUpdate activeUpdate;

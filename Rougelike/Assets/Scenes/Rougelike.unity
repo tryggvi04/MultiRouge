@@ -275,12 +275,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376558864}
   m_CullTransparentMesh: 0
---- !u!1 &455773661 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6076300431689387987, guid: 7583f4a8d617a2b4c9433964840bf96b,
-    type: 3}
-  m_PrefabInstance: {fileID: 6076300433431403727}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &587379499
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,26 +342,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &638402274 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6076300432439662244, guid: 7583f4a8d617a2b4c9433964840bf96b,
-    type: 3}
-  m_PrefabInstance: {fileID: 6076300433431403727}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &638402282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638402274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f6de2fd683a774d8da28b4bf5f9158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Physical_World_Camera: {fileID: 455773661}
-  Spectre_World_Camera: {fileID: 1173609423}
 --- !u!1 &864836959
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,12 +449,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 591884238488229445, guid: 8f98beb871fa3ef43b27a201c87c92c9,
     type: 3}
   m_PrefabInstance: {fileID: 8466688617580519719}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1173609423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5351523392017280904, guid: 7583f4a8d617a2b4c9433964840bf96b,
-    type: 3}
-  m_PrefabInstance: {fileID: 6076300433431403727}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1238232909
 GameObject:
@@ -970,46 +938,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3327155090934401487, guid: 7583f4a8d617a2b4c9433964840bf96b,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4199046141162059294, guid: 7583f4a8d617a2b4c9433964840bf96b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.011
-      objectReference: {fileID: 0}
-    - target: {fileID: 4199046141162059294, guid: 7583f4a8d617a2b4c9433964840bf96b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5351523392017280904, guid: 7583f4a8d617a2b4c9433964840bf96b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076300431689387984, guid: 7583f4a8d617a2b4c9433964840bf96b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.011000395
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076300431689387984, guid: 7583f4a8d617a2b4c9433964840bf96b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.0029999614
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076300431689387985, guid: 7583f4a8d617a2b4c9433964840bf96b,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 375
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076300431689387987, guid: 7583f4a8d617a2b4c9433964840bf96b,
-        type: 3}
-      propertyPath: m_Name
-      value: Physical_World_Camera
-      objectReference: {fileID: 0}
     - target: {fileID: 6076300432439662241, guid: 7583f4a8d617a2b4c9433964840bf96b,
         type: 3}
       propertyPath: m_RootOrder
@@ -1074,11 +1002,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076300432439662270, guid: 7583f4a8d617a2b4c9433964840bf96b,
-        type: 3}
-      propertyPath: Iframes_Timer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6076300432484938345, guid: 7583f4a8d617a2b4c9433964840bf96b,
         type: 3}

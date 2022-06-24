@@ -20,7 +20,7 @@ public class Spectre : MonoBehaviour
         stateUpdate = physical_World;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         stateUpdate();
     }
@@ -32,8 +32,6 @@ public class Spectre : MonoBehaviour
         if (Input.GetButtonDown("Realm_Change"))
         {
             stateUpdate = spectre_World;
-
-
         }
 
     }
@@ -45,8 +43,6 @@ public class Spectre : MonoBehaviour
         if (Input.GetButtonDown("Realm_Change"))
         {
             stateUpdate = physical_World;
-
-
         }
 
     }
